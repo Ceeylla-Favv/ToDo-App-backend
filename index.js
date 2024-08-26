@@ -1,8 +1,8 @@
 const express = require ('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const { connectDb } = require('../ToDo-App-backend/db/connectDb');
-const router = require('../ToDo-App-backend/routes/handler');
+const { connectDb } = require('./db/connectDb');
+const router = require('./routes/handler');
 
 
 dotenv.config();
