@@ -11,7 +11,7 @@ require('dotenv').config();
         },
       });
       let info = await transporter.sendMail({
-        from: "bertleyprisy@gmail.com",
+        from: "bertleyprisy@gmail.com - ToDo App",
         to: email,
         subject: title,
         text: body,

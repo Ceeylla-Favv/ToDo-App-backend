@@ -9,6 +9,8 @@ const userSchema = new Schema({
     enum: ['Admin', 'User' ],
     default: 'User'
   },
+  resetToken:String,
+  resetExpires:Date,
 },
   {timestamps: true
 });
