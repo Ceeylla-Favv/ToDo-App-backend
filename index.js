@@ -14,12 +14,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-app.use("/", router);
-app.use("/api/v1", todoRouter);
-
 app.use(cors({
     origin: "*"
 }));
+
+app.use("/", router);
+app.use("/api/v1", todoRouter);
+
+
 
 app.get("/", (req, res) => {
     res.status(200).json({ info: "API working perfectly"})
