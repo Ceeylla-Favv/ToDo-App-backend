@@ -1,6 +1,7 @@
 const express = require('express');
 const { loginUser, registerUser, forgetPassword, resetPassword, changePassword } = require('../controllers/authController');
 const isLoggedIn = require('../middleware/authenticate');
+const adminDashboard = require('../controllers/admin');
 
 
 const app = express();
@@ -18,6 +19,8 @@ router.route('/forgotPassword').post(forgetPassword);
 // router.route('/verifyOTP').post(verifyOtp);
 router.route('/resetPassword').post([isLoggedIn], resetPassword);
 router.route('/changePassword').post(changePassword);
+router.route('/dashboard').get([isLoggedIn], adminDashboard)
+
 
 
 
