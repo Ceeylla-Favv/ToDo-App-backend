@@ -1,3 +1,4 @@
+const ToDo = require("../model/Todo");
 const userModel = require("../model/User");
 
 
@@ -9,7 +10,9 @@ const adminDashboard = async(req, res) => {
             return res.status(404).json({message : "User not found!"})
         }
 
-        return res.status(200).json({getAllUsers});
+        const getAllTodos = await ToDo.find().populate('User');
+
+        return res.status(200).json({getAllUsers, getAllTodos});
 
     } catch (error) {
         console.log(error.message)
