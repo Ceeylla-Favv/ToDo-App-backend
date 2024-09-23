@@ -10,7 +10,7 @@ const adminDashboard = async(req, res) => {
             return res.status(404).json({message : "User not found!"})
         }
 
-        const getAllTodos = await ToDo.find().populate('User');
+        const getAllTodos = await ToDo.find({user:getAllUsers})
 
         return res.status(200).json({getAllUsers, getAllTodos});
 
