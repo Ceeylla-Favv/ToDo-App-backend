@@ -12,7 +12,7 @@ const adminDashboard = async(req, res) => {
 
         const getAllTodos = await ToDo.find({user:getAllUsers})
 
-        return res.status(200).json({getAllUsers, getAllTodos});
+        return res.status(200).json({user:getAllUsers, allTodos:getAllTodos});
 
     } catch (error) {
         console.log(error.message)
